@@ -1,5 +1,5 @@
-create database 1bm25cs150_supplier;
-use 1bm25cs151_supplier;
+create database 1bm25cs155_supplier;
+use 1bm25cs155_supplier;
 CREATE TABLE SUPPLIERS (
     SID INT PRIMARY KEY,
     SNAME VARCHAR(50),
