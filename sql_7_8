@@ -93,10 +93,11 @@ where c.cost = (
 );
 
 --  query 1
-select sname,pname from suppliers,parts
-where sid = (select sid from catalog where cost = ( select max(cost) from catalog ))
-and
-pid = (select pid from catalog where cost = ( select max(cost) from catalog ));
+SELECT s.sname, p.pname, c.cost
+FROM catalog c
+JOIN suppliers s ON c.sid = s.sid
+JOIN parts p ON c.pid = p.pid
+WHERE c.cost = (SELECT MAX(cost) FROM catalog);
 
 --  query 2
 select sname from suppliers
